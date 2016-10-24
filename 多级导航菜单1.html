@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>多级导航菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+        }
+
+
+        #menu li{
+            float: left;
+            margin-right: 5px;
+        }
+        #menu .main-menu{
+            background: #cccccc;
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+        }
+        #menu .sub-menu{
+            background: #eee;
+            display: none;
+            width: 120px;
+        }
+        #menu .sub-menu li{
+            float: none;
+            border-bottom: 1px dotted #000;
+            height: 25px;
+            line-height: 25px;
+        }
+        #menu > li:hover .sub-menu{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="#" class="main-menu">Link 1</a>
+        <ul class="sub-menu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 2</a></li>
+            <li><a href="#">sublink 3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="main-menu">Link 2</a>
+        <ul class="sub-menu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 2</a></li>
+            <li><a href="#">sublink 3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="main-menu">Link 3</a>
+        <ul class="sub-menu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 2</a></li>
+            <li><a href="#">sublink 3</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
