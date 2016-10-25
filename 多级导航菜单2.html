@@ -38,10 +38,6 @@
             height: 25px;
             line-height: 25px;
         }
-       /* #menu > li:hover .sub-menu{
-            display:block;
-        }
-   */
     </style>
 </head>
 <body>
@@ -73,17 +69,24 @@
 </ul>
 <script>
     var oMenu = document.getElementById('menu');
-    var aMainMenu =  oMenu.getElementsByClassName('main-menu');//1e8及以下有兼容性问题
+    var aMainMenu =  oMenu.getElementsByTagName('a');
     var aSubMenu = oMenu.getElementsByTagName('ul');
-    for(var i=0; i<aMainMenu.length; i++){
-        aMainMenu[i].index = i;//把i保存到index里
-        aMainMenu[i].onmouseover = function(){
-            aSubMenu[  this.index  ].style.display = 'block';
-        };
+    var count=0;
+    for( var i=0; i<aMainMenu.length; i++ ){
+        if(aMainMenu[i].className=='main-menu'){
 
-        aMainMenu[i].onmouseout = function() {
-            aSubMenu[this.index].style.display = 'none';
-        };
+            aMainMenu[i].index = count++;
+
+            aMainMenu[i].onmouseover = function () {
+
+                aSubMenu[this.index].style.display = 'block';
+            };
+
+            aMainMenu[i].onmouseout = function () {
+
+                aSubMenu[this.index].style.display = 'none';
+            };
+        }
     }
 </script>
 </body>
