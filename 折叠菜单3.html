@@ -8,24 +8,23 @@
             margin: 0;
             padding: 0;
         }
-        ul,ol{
-            list-style: none;
+        ul{
+            list-style:none;
         }
         a{
-            text-decoration: none;
+            text-decoration:none;
         }
-        #menu{
-            width: 120px;
-            height: 30px;
+        #menu .main-menu{
+            width:120px;
+            border: 1px solid #000;;
         }
-        #menu .mian-menu{
-            height: 30px;
+        #menu h3{
             background: #000;
-            color: #eeeeee;
+            height: 30px;
+            color: white;
         }
         #menu .sub-menu{
-            border: 1px solid #000;
-            display: none;
+            display:none;
         }
     </style>
 </head>
@@ -39,7 +38,7 @@
             <li><a href="#">003</a></li>
         </ul>
     </li>
-    <li class="main-menu">
+    <li  class="main-menu">
         <h3>交流区</h3>
         <ul class="sub-menu">
             <li><a href="#">001</a></li>
@@ -50,19 +49,20 @@
 </ul>
 
 <script>
-    var oMenu = document.getElementById("menu");
-    var aLi = oMenu.getElementsByTagName("li");
-    for(var i=0; i<aLi.length; i++){
-        if(aLi[i].className == "main-menu"){
-            aLi[i].bFlag = false;
-            aLi[i].onclick = function(){
-                if(this.bFlag){
-                    this.getElementsByTagName("ul")[0].style.display = "none";
-                }else {
-                    this.getElementsByTagName("ul")[0].style.display = "block";
-                }
-                this.bFlag = !this.bFlag;
+        var oMenu = document.getElementById("menu");
+        var aH3 = oMenu.getElementsByTagName("h3");
+        var aUl = oMenu.getElementsByTagName("ul");
+        var count = 0;
+    for(var i = 0;i<aH3.length;i++){
+        aH3[i].index = count++;
+        aH3[i].bFlag =false;
+        aH3[i].onclick = function(){
+            if(this.bFlag){
+                aUl[this.index].style.display = "none";
+            }else{
+                aUl[this.index].style.display = "block";
             }
+            this.bFlag = !this.bFlag;
         }
     }
 </script>
