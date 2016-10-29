@@ -61,7 +61,6 @@
                var  oMenu = document.getElementById("menu");
                var  aLi = oMenu.getElementsByTagName("li");
               var oDiv =  document.getElementById("content");//byid只能是根目录下
-               var arr = [1111111111,2222222222,3333333333]
                var last = 0;
                 for (var i=0;i<aLi.length;i++){
                     aLi[i].index = i;
@@ -69,7 +68,17 @@
                             aLi[last].className="";//清空上一次
                            this.className="selected";
                         last = this.index;
-                        oDiv.innerHTML = arr[this.index];
+                        switch (this.index){
+                            case 0:
+                                oDiv.innerHTML = 1111111111;
+                                break
+                            case 1:
+                                oDiv.innerHTML = 2222222222;
+                                break
+                            case 2:
+                                oDiv.innerHTML = 3333333333;
+                                break
+                        }
                             }
                 }
             </script>
